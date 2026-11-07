@@ -4,10 +4,38 @@ on:
   push:
     branches: [main]
 
+  pull_request:
+    branches: [main]
+
 jobs:
-  hello:
-    runs-on: ubuntu-latest
+  build:
+    name: Build EyeGuard
+    runs-on: windows-latest
 
     steps:
-      - name: Say hello
-        run: echo "Hello from EyeGuard GitHub Actions!"
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable-x86_64-pc-windows-msvc
+
+      - name: Check Rust code
+        working-directory: src-tauri
+        run: cargo check
+
+      - name: Check Tauri build
+        run: npm run tauri build -- --no-bundle
