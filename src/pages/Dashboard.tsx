@@ -1,4 +1,4 @@
-import StatCard from "../components/StatCard-BROKEN";
+import StatCard from "../components/StatCard";
 
 function Dashboard() {
   return (
