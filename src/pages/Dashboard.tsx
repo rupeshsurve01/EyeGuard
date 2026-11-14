@@ -1,4 +1,4 @@
-import StatCard from "../components/StatCard";
+import StatCard from "../components/StatCard-BROKEN";
 
 function Dashboard() {
   return (
@@ -18,40 +18,40 @@ function Dashboard() {
 
       {/* Statistics Cards */}
 
-<div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-  <StatCard
-    icon="🖥️"
-    label="Screen Time"
-    value="2h 34m"
-    description="Total active computer time"
-    status="Today"
-    statusClass="bg-blue-500/10 text-blue-400"
-    hoverClass="hover:border-blue-500/40"
-    iconClass="bg-blue-500/10"
-  />
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <StatCard
+          icon="🖥️"
+          label="Screen Time"
+          value="2h 34m"
+          description="Total active computer time"
+          status="Today"
+          statusClass="bg-blue-500/10 text-blue-400"
+          hoverClass="hover:border-blue-500/40"
+          iconClass="bg-blue-500/10"
+        />
 
-  <StatCard
-    icon="☕"
-    label="Breaks Taken"
-    value="3"
-    description="Breaks completed today"
-    status="Good"
-    statusClass="bg-green-500/10 text-green-400"
-    hoverClass="hover:border-green-500/40"
-    iconClass="bg-green-500/10"
-  />
+        <StatCard
+          icon="☕"
+          label="Breaks Taken"
+          value="3"
+          description="Breaks completed today"
+          status="Good"
+          statusClass="bg-green-500/10 text-green-400"
+          hoverClass="hover:border-green-500/40"
+          iconClass="bg-green-500/10"
+        />
 
-  <StatCard
-    icon="⏱️"
-    label="Next Break"
-    value="12 min"
-    description="Recommended break time"
-    status="Soon"
-    statusClass="bg-yellow-500/10 text-yellow-400"
-    hoverClass="hover:border-yellow-500/40"
-    iconClass="bg-yellow-500/10"
-  />
-</div>
+        <StatCard
+          icon="⏱️"
+          label="Next Break"
+          value="12 min"
+          description="Recommended break time"
+          status="Soon"
+          statusClass="bg-yellow-500/10 text-yellow-400"
+          hoverClass="hover:border-yellow-500/40"
+          iconClass="bg-yellow-500/10"
+        />
+      </div>
 
       {/* Today's Activity */}
       <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
