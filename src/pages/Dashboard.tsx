@@ -1,4 +1,5 @@
 import StatCard from "../components/StatCard";
+import WellnessCard from "../components/WellnessCard";
 
 function Dashboard() {
   return (
@@ -107,87 +108,23 @@ function Dashboard() {
       {/* Wellness Status */}
       {/* Wellness Status */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        {/* 20-20-20 Rule */}
-        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <div className="flex items-start justify-between">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-xl">
-                👁️
-              </div>
+        <WellnessCard
+          icon="👁️"
+          title="20-20-20 Rule"
+          description="Regular eye-rest reminders"
+          nextReminder="In 12 minutes"
+          interval="20 minutes"
+          iconClass="bg-blue-500/10"
+        />
 
-              <div>
-                <h3 className="font-semibold text-white">20-20-20 Rule</h3>
-
-                <p className="mt-1 text-sm text-slate-400">
-                  Regular eye-rest reminders
-                </p>
-              </div>
-            </div>
-
-            <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400">
-              Active
-            </span>
-          </div>
-
-          <div className="mt-6 flex items-center justify-between rounded-xl bg-slate-950 p-4">
-            <div>
-              <p className="text-sm text-slate-400">Next reminder</p>
-
-              <p className="mt-1 text-lg font-semibold text-white">
-                In 12 minutes
-              </p>
-            </div>
-
-            <div className="text-right">
-              <p className="text-xs text-slate-500">Interval</p>
-
-              <p className="mt-1 text-sm font-medium text-slate-300">
-                20 minutes
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Hydration */}
-        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
-          <div className="flex items-start justify-between">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 text-xl">
-                💧
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-white">Hydration Reminder</h3>
-
-                <p className="mt-1 text-sm text-slate-400">
-                  Stay hydrated while working
-                </p>
-              </div>
-            </div>
-
-            <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-400">
-              Active
-            </span>
-          </div>
-
-          <div className="mt-6 flex items-center justify-between rounded-xl bg-slate-950 p-4">
-            <div>
-              <p className="text-sm text-slate-400">Next reminder</p>
-
-              <p className="mt-1 text-lg font-semibold text-white">
-                In 28 minutes
-              </p>
-            </div>
-
-            <div className="text-right">
-              <p className="text-xs text-slate-500">Interval</p>
-
-              <p className="mt-1 text-sm font-medium text-slate-300">
-                30 minutes
-              </p>
-            </div>
-          </div>
-        </div>
+        <WellnessCard
+          icon="💧"
+          title="Hydration Reminder"
+          description="Stay hydrated while working"
+          nextReminder="In 28 minutes"
+          interval="30 minutes"
+          iconClass="bg-cyan-500/10"
+        />
       </div>
     </div>
   );
